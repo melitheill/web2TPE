@@ -2,6 +2,7 @@
 Diagrama de entidad relación (DER)
 El diagrama entidad relación (DER) del modelo de datos planteado (archivo jpeg o pdf)
 El código SQL que genera la base de datos (exportado desde phpMyAdmin)
+
 Integrantes :
 Lucia Segovia 
 Mail : lusegovia01@gmail.com
