@@ -10,4 +10,4 @@ Dni :
 Melina Theill
 Mail: meli.theill@gmail.com
 Dni : 40455464
-Tematica del TPE: Breve descripción de la temática
+Tematica del TPE: Como tematica del TPE vamos a diseñar un sitio web dinamico de Reproduccion de Musica de distintos generos y artistas, para que abarque todas las edades y gustos particulares de cada usuario.
