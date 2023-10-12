@@ -38,53 +38,23 @@
             </nav>
     </header>
 
-      <!-- main section -->
-      <main class="container mt-5">
-        <section class="albunes">
-          <?php
-          //se incluye el archivo donde se definen los contenidos de los albunes
+    <main class="conteiner mt-5">
+        <?php
           require_once 'albunes.php';
+          $id->$_GET['id'];
+          $album->$albunes[$id];
+        ?>
 
-          for($i=0; $i<- count($albunes); $i++){
-           $album=$albunes[$i];
-           ?>
-           <div class= "card">
-              <img src="<?php echo $album->imagen ?>" alt="..">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $album->titulo?></h5>
-                <p class="card-title"><?php echo $album->artista?></p>
-                <a href="album.php?id=<?php echo $i ?>" class="btn btn-outline-primary">Open</a>
-              </div>
-           </div>
-         <?php
-          }
-          ?>
+        <section class="album">
+         <img src="<?php echo $album->imagen ?>" alt="..">
+         <h5 class="card-title"><?php echo $album->titulo?></h5>
+         <p class="card-title"><?php echo $album->canciones?></p>
         </section>
-      </main>
 
 
-      <footer>
-        <section class="cont-footer">
-          <div>
-            <ul>
-              <li>Sponsors</li>
-              <li>Prensa</li>
-           </ul>
-          </div>
-          <div >Ayuda
-            <ul>
-              <li>Contacto</li>
-              <li>Información</li>
-           </ul>
-          </div>
-          <div>Follow Us
-            <a href="https://api.instagram.com/" target="_blank"><i class="bii bi-instagram text-black"></i></a>
-            <a href="https://es-la.facebook.com/" target="_blank"><i class="bii bi-facebook text-black"></i></a>
-            <a href="https://twitter.com/?lang=es" target="_blank"><i class="bii bi-twitter text-black"></i></a>
-          </div>
-        </section> 
-      </footer>
+    </main>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>  
+
+    
 </body>
 </html>
