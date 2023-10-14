@@ -6,4 +6,7 @@ class ArtistaView {
           require 'templates/artista.phtml';
         }
     
+    
+   
+    
 }

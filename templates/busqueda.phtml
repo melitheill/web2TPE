@@ -1,6 +1,15 @@
 <?php require  'templates/header.phtml'; ?>
-  <h1>Lista de nuestos artista </h1>
-                 <table>
+echo "<h1>Lista por artista por : $nacionalidad</h1>";
+          echo "<table>
+          <thead>
+              <tr>
+                  <th>Título</th>
+                  <th>Año</th>
+                  <th>Estudio</th>
+              </tr>
+          <thead>
+          <tbody>
+          <table>
                     <thead>
                     <tr>
                     <th>Artista</th>
@@ -18,7 +27,7 @@
             
             <?php endforeach; ?>
              </tbody>      
-            </table>    
-                               
+            </table>      
              <?php require  'templates/footer.phtml' ?>
  
+

@@ -14,6 +14,8 @@ class ArtistaModel{
         return $artistas;
     }
    
+    
+ 
 
 
     

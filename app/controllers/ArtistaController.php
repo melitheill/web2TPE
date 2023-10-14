@@ -2,7 +2,7 @@
  
  
  require_once 'app/models/ArtistaModel.php';
- require_once 'app/views/AstistaView.php';
+ require_once 'app/views/ArtistaView.php';
 
  class ArtistaController{
      private $model;
@@ -18,8 +18,11 @@
         $this-> view-> showArtistas($artista);
      }
 
+   
+}
+
+
      
- }
 
 
 
