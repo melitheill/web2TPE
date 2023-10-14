@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 5e89a1b81ac26703bde7848bc6accf24525339b7
 <IfModule mod_rewrite.c>
 	RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5e89a1b81ac26703bde7848bc6accf24525339b7
     RewriteRule \.(?:css|js|jpe?g|gif|png)$ - [L]
     RewriteRule ^(.*)$ router.php?action=$1 [QSA,L]
 </IfModule>
