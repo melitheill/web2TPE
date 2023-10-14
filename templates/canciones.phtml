@@ -1,0 +1,30 @@
+<?php require  'templates/header.phtml'; ?>
+     <h1> Lista de Nuestras Canciones </h1>
+                 <table>
+                    <thead>
+                    <tr>
+                    <th>Nombre</th>
+                    <th>Duracion</th>
+                    <th>Genero</th>
+                    <th>Año de Lanzamiento</th>
+                    <th>Album</th>
+                    <th>Artista</th>
+
+                </tr>
+            <thead>
+            <tbody>  
+             <?php   foreach ($canciones as $cancion): ?>      
+                <tr>               
+                    <td><?=$cancion->nombreCancion?></td>
+                    <td><?=$cancion->duracion?></td>
+                    <td><?=$cancion->genero?></td>
+                    <td><?=$cancion->anio?></td>
+                    <td><?=$cancion->nombreAlbum?></td>
+                    <td><?=$cancion->nombreArtista?></td>
+                </tr>
+            
+            <?php endforeach; ?>
+             </tbody>      
+            </table>      
+             <?php require  'templates/footer.phtml' ?>
+ 

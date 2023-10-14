@@ -1,27 +1,23 @@
-echo "<h1> Lista de Nuestros Artistas </h1>";
-         
-         echo "<table>
-                 <thead>
-                <tr>
-                <th>Artista</th>
-                <th>Pais</th>
-                <th>Edad</th>
-            </tr>
-        <thead>
-        <tbody>
-        ";
- 
-        
-         foreach ($artistas as $artista){
+<?php require  'templates/header.phtml'; ?>
+     <h1> Lista de Nuestros Artistas </h1>
+                 <table>
+                    <thead>
+                    <tr>
+                    <th>Artista</th>
+                    <th>Pais</th>
+                    <th>Edad</th>
+                </tr>
+            <thead>
+            <tbody>  
+             <?php   foreach ($artistas as $artista): ?>      
+                <tr>               
+                    <td><?=$artista->nombreArtista?></td>
+                    <td><?=$artista->nacionalidad?></td>
+                    <td><?=$artista->edad?></td>
+                </tr>
             
-             echo "
-            <tr>
-                <td>$artista->nombreArtista</td>
-                <td>$artista->nacionalidad</td>
-                <td>$artista->edad</td>
-            </tr>
-        ";
-        }
-        echo " </tbody>   
-        </table>";
-         
+            <?php endforeach; ?>
+             </tbody>      
+            </table>      
+             <?php require  'templates/footer.phtml' ?>
+ 

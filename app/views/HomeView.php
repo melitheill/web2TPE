@@ -10,6 +10,6 @@ class HomeView {
     }
 
     public function showEror()  {
-      require'templates/error.phtml';
+     
     }
 }

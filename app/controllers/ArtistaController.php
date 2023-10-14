@@ -10,12 +10,12 @@
 
      public function __construct() {
         $this-> model = new ArtistaModel();
-        $this -> view = new AstistaView ();
+        $this -> view = new ArtistaView ();
      }
 
      public function showArtistas (){
         $artista = $this -> model -> getArtistas();
-        $this-> view-> showAstistas($artista);
+        $this-> view-> showArtistas($artista);
      }
 
      

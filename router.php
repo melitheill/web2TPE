@@ -1,7 +1,8 @@
 <?php
  
-require './app/controllers/HomeControler.php'; 
-require './app/controllers/ArtistaController.php';
+require_once 'app/controllers/HomeController.php';
+require_once 'app/controllers/ArtistaController.php';
+require_once  'app/controllers/CancionesController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -24,7 +25,11 @@ switch ($params[0]) {
             $controller = new ArtistaController ();
             $controller -> showArtistas();
             break;
-    
+    case 'canciones':
+            $controller = new CancionesController;
+            $controller -> showArtistas();
+            break;
+        
     default:  
         
         break;
