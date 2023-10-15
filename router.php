@@ -2,8 +2,8 @@
  
 require_once 'app/controllers/HomeController.php';
 require_once 'app/controllers/ArtistaController.php';
-require_once  'app/controllers/CancionesController.php';
-require_once 'app/views/AuthView.php';
+require_once 'app/controllers/CancionesController.php';
+require_once 'app/controllers/AuthController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -32,8 +32,8 @@ switch ($params[0]) {
             $controller -> showArtistas();
             break;
     case 'login':
-            $view = new AuthView ()  ;
-            $view -> showLogin();
+            $controller = new AuthController;
+            $controller -> showLogin();
             break;
         
     default:  
