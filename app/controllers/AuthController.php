@@ -11,5 +11,18 @@
     public function showLogin (){
         $this-> view -> showLogin();
     }
+    
+    public function autenticarUsuario (){
+        $user = $_POST['user'];
+        $password = $_POST['password'];
+
+        if (empty($user) || empty($password)) {
+            echo 'esta vacio'; 
+        } 
+            
+        
+        
+    }
+
 
 }

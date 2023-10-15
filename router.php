@@ -35,6 +35,10 @@ switch ($params[0]) {
             $controller = new AuthController;
             $controller -> showLogin();
             break;
+     case 'autenticar':
+            $controller = new AuthController;
+            $controller -> autenticarUsuario();
+            break;
         
     default:  
         
