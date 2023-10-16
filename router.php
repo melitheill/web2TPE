@@ -31,27 +31,22 @@ switch ($params[0]) {
             $controller = new CancionesController ();
             $controller -> showArtistas();
             break;
-    case 'busqueda':
-                $controller = new CancionesController ();
-                $controller -> showBusqueda() ;
-                
 
-                break;
-    case 'busqueda/reggeton':
-               $controller = new CancionesController ();
-               $controller -> showByGenero() ;
-                    break;
     case 'login':
             $controller = new AuthController;
             $controller -> showLogin();
             break;
-     case 'autenticar':
+    case 'autenticar':
             $controller = new AuthController;
             $controller -> autenticarUsuario();
             break;
+    case 'logout':
+                $controller = new AuthController;
+                $controller ->logout();
+                break;
         
     default:  
-        
+        echo'Eror 404';
         break;
 }
 

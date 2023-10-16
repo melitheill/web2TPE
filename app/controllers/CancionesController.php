@@ -19,13 +19,6 @@ require_once 'app/models/CancionesModel.php';
       $this-> view-> showCanciones($canciones);
    }
    
-    
-   public function showBusqueda (){
-      $this->view->showBusqueda();
-      
      
-   }
-   
-   
     
   }

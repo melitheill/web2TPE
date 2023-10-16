@@ -17,26 +17,30 @@
         $this-> view -> showLogin();
     }
 
-    public function showEror (){
-        $this-> view -> showEror();
-    }
 
     public function autenticarUsuario (){
         if(!empty($_POST['user'])&& !empty($_POST['password'])){
             $user=$_POST['user'];
             $password=$_POST['password'];
+            $registro = $this->model->getUsuarios($user);
 
-        $registro = $this->model->getUsuarios($user);
         if ($registro && password_verify ($password ,$registro->password)){
-           // deberia ir al fomulario para cambiar las tablas de la base de datos
-           header("LOCATION: " . BASE_URL . 'home');
-           echo 'correcto';
-          } else { $this-> view-> showEror(); }
+            session_start();
+            $_SESSION['USER_ID'] = $user->idUser;
+            $_SESSION['USER_NAME'] = $user->user;
 
-         } else {  $this->view->showLogin(); }
-    }
+           header("LOCATION: " . BASE_URL . 'home');
+           // el home lo deberias cambiar por el formulario que hace los cambios en las tablas
+           
+          } else { $this-> view-> showLogin('Usuario o Contraseña Incorrecta'); }
+
+         } else {  $this->view->showLogin('Faltan completar alguno de los campos');
+            return;}
+         }
 
       public function logout (){
-          
+        session_start();
+        session_destroy();
+        header("LOCATION: " . BASE_URL . 'home');
       }
 }

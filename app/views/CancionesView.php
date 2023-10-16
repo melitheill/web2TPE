@@ -8,6 +8,8 @@ class CancionesView {
     public function showBusqueda (){
         require 'templates/busqueda.phtml';
     }
+
+    
     
 
 }
