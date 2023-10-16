@@ -29,18 +29,14 @@
         $registro = $this->model->getUsuarios($user);
         if ($registro && password_verify ($password ,$registro->password)){
            // deberia ir al fomulario para cambiar las tablas de la base de datos
+           header("LOCATION: " . BASE_URL . 'home');
            echo 'correcto';
-        } else{
-            $this-> view-> showEror();
+          } else { $this-> view-> showEror(); }
 
-        }
-
-         } else {
-            $this->view->showLogin();
-                 }
+         } else {  $this->view->showLogin(); }
     }
 
       public function logout (){
-
+          
       }
 }
