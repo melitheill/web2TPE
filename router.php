@@ -31,6 +31,16 @@ switch ($params[0]) {
             $controller = new CancionesController ();
             $controller -> showArtistas();
             break;
+    case 'busqueda':
+                $controller = new CancionesController ();
+                $controller -> showBusqueda() ;
+                
+
+                break;
+    case 'busqueda/reggeton':
+               $controller = new CancionesController ();
+               $controller -> showByGenero() ;
+                    break;
     case 'login':
             $controller = new AuthController;
             $controller -> showLogin();

@@ -1,33 +1,17 @@
 <?php require  'templates/header.phtml'; ?>
-echo "<h1>Lista por artista por : $nacionalidad</h1>";
-          echo "<table>
-          <thead>
-              <tr>
-                  <th>Título</th>
-                  <th>Año</th>
-                  <th>Estudio</th>
-              </tr>
-          <thead>
-          <tbody>
-          <table>
-                    <thead>
-                    <tr>
-                    <th>Artista</th>
-                    <th>Pais</th>
-                    <th>Edad</th>
-                </tr>
-            <thead>
-            <tbody>  
-             <?php   foreach ($artistas as $artista): ?>      
-                <tr>               
-                    <td><?=$artista->nombreArtista?></td>
-                    <td><?=$artista->nacionalidad?></td>
-                    <td><?=$artista->edad?></td>
-                </tr>
-            
-            <?php endforeach; ?>
-             </tbody>      
-            </table>      
-             <?php require  'templates/footer.phtml' ?>
- 
+                <ul class="navbar-nav m-4">
+                        <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="busqueda/<?= $genero='reggeton' ?>">Reggeton</a>
+                        </li>
+                                <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="busqueda/<?= $genero='trap' ?>">Trap</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="busqueda/<?= $genero='pop' ?>">Pop</a>
+                        </li>
+                </ul>
 
+
+                <table class="table table-sm m-4">
+            
+<?php require  'templates/footer.phtml' ?>

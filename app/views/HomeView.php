@@ -4,12 +4,7 @@ class HomeView {
 
 
    public function showHome (){
-    require 'templates/header.phtml';
-
-    require 'templates/footer.phtml';
+    require'templates/home.phtml';
     }
 
-    public function showEror()  {
-     
-    }
 }

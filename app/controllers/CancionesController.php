@@ -6,19 +6,26 @@ require_once 'app/models/CancionesModel.php';
 
   class CancionesController {
    
-        private $model;
-        private $view;
+   private $model;
+   private $view;
+
+   public function __construct() {
+      $this-> model = new CancionesModel ();
+      $this -> view = new CancionesView;
+   }
+
+   public function showArtistas (){
+      $canciones = $this -> model -> getCanciones();
+      $this-> view-> showCanciones($canciones);
+   }
    
-        public function __construct() {
-           $this-> model = new CancionesModel ();
-           $this -> view = new CancionesView;
-        }
+    
+   public function showBusqueda (){
+      $this->view->showBusqueda();
+      
+     
+   }
    
-        public function showArtistas (){
-           $canciones = $this -> model -> getCanciones();
-           $this-> view-> showCanciones($canciones);
-        }
    
-        
     
   }
