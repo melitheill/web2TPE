@@ -11,7 +11,7 @@ require_once 'app/models/CancionesModel.php';
 
    public function __construct() {
       $this-> model = new CancionesModel ();
-      $this -> view = new CancionesView;
+      $this -> view = new CancionesView ();
    }
 
    public function showArtistas (){
@@ -19,9 +19,7 @@ require_once 'app/models/CancionesModel.php';
       $this-> view-> showCanciones($canciones);
    }
 
-   public function ShowByGenero (){
-       $this->view->showByGenero();
-       }
+   
   
    
      

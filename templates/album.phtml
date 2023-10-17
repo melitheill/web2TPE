@@ -1,0 +1,16 @@
+
+<?php require  'templates/header.phtml'; ?>
+<h1 class="text-center mt-5">Buscar por Album</h1>
+<form action="filtrar" method="POST" class = "mt-5 w-25 mx-auto">
+
+<select name ="album">
+<?php   foreach ($albums as $album): ?>  
+  
+   <option value="<?=$album->nombreAlbum?>"><?=$album->nombreAlbum?></option>
+   <?php endforeach; ?>
+   </select>
+   <button type="submit" class="btn btn-primary ">Selecionar</button>
+</form>
+
+
+<?php require  'templates/footer.phtml' ?>

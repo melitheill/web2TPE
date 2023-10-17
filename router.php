@@ -4,6 +4,7 @@ require_once 'app/controllers/HomeController.php';
 require_once 'app/controllers/ArtistaController.php';
 require_once 'app/controllers/CancionesController.php';
 require_once 'app/controllers/AuthController.php';
+require_once 'app/controllers/AlbumController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -25,16 +26,19 @@ switch ($params[0]) {
     case 'artistas':
             $controller = new ArtistaController ();
             $controller -> showArtistas();
-            break;
-    
+            break;    
     case 'canciones':
             $controller = new CancionesController ();
             $controller -> showArtistas();
             break;
-    case 'genero':
-         $controller = new CancionesController ();
-         $controller -> ShowByGenero();
+    case 'album':
+          $controller = new AlbumController();
+          $controller->showAlbum ();
           break;
+    case'filtrar':
+         $controller = new AlbumController();
+         $controller->showByNombre();  
+         break;    
     case 'login':
             $controller = new AuthController;
             $controller -> showLogin();
