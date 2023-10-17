@@ -1,0 +1,25 @@
+<?php require  'templates/header.phtml'; ?>
+  <h1 class="text-center mt-5">Lista de nuestos artistas </h1>
+  
+             <table class="table table-sm m-4">
+                    <thead>
+                    <tr>
+                    <th scope="col">Artista</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col">Edad</th>
+                </tr>
+            <thead>
+            <tbody>  
+             <?php   foreach ($artistas as $artista): ?>      
+                <tr>               
+                    <td><?=$artista->nombreArtista?></td>
+                    <td><?=$artista->nacionalidad?></td>
+                    <td><?=$artista->edad?></td>
+                </tr>
+            
+            <?php endforeach; ?>
+             </tbody>      
+            </table>    
+                    
+             <?php require  'templates/footer.phtml' ?>
+ 
