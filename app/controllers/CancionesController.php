@@ -18,6 +18,11 @@ require_once 'app/models/CancionesModel.php';
       $canciones = $this -> model -> getCanciones();
       $this-> view-> showCanciones($canciones);
    }
+
+   public function ShowByGenero (){
+       $this->view->showByGenero();
+       }
+  
    
      
     
