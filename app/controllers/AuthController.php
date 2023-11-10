@@ -4,6 +4,7 @@
  require 'app/models/AuthModel.php';
 
 
+
     class AuthController {
        private $view;
        private $model;
@@ -29,8 +30,8 @@
             $_SESSION['USER_ID'] = $user->idUser;
             $_SESSION['USER_NAME'] = $user->user;
 
-           header("LOCATION: " . BASE_URL . 'home');
-           // el home lo deberias cambiar por el formulario que hace los cambios en las tablas
+           header("LOCATION: " . BASE_URL . 'lista');
+
            
           } else { $this-> view-> showLogin('Usuario o Contraseña Incorrecta'); }
 

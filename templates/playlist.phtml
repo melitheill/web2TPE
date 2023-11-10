@@ -1,0 +1,17 @@
+<?php require  'templates/header.phtml'; ?>
+<?php require 'templates/formAlta.phtml'; ?>
+
+
+    <ul class="list-group">
+    <?php foreach($canciones as $cancion) { ?>
+       <li class="list-group-item  item-task <?php if(!$cancion->guardar) echo 'guardada' ?> "> las canciones que agrego en teoria
+          <div class="actions">
+             <a href="eliminar/<?php echo $cancion->id ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+             <a href="guardar/<?php echo $cancion->id ?>" type="button" class='btn btn-success ml-auto'>Finalizar</a> <?php } ?>
+          
+          </div>
+       </li>
+    </ul>
+      
+    
+<?php 

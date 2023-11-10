@@ -5,52 +5,86 @@ require_once 'app/controllers/ArtistaController.php';
 require_once 'app/controllers/CancionesController.php';
 require_once 'app/controllers/AuthController.php';
 require_once 'app/controllers/AlbumController.php';
+require_once 'app/controllers/TasksController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
+$action = 'lista';
 if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 } else{
     $action = 'home'; 
 }
 
+
+
 $params = explode('/', $action);
 
-
+//playlis
+//listar   -->  showTasks
+//agregar  -->  addTasks
+//eliminar:ID  -->  removeTasks($id)
+//guardar:ID  -->  saveTasks($id)
 
 switch ($params[0]) {
     case 'home':
-        $controller = new HomeController ();
-        $controller -> showHome();
+          $controller = new HomeController ();
+          $controller -> showHome();
         break;
     case 'artistas':
             $controller = new ArtistaController ();
             $controller -> showArtistas();
-            break;    
+        break;    
     case 'canciones':
             $controller = new CancionesController ();
             $controller -> showArtistas();
-            break;
+        break;
     case 'album':
           $controller = new AlbumController();
           $controller->showAlbum ();
-          break;
+        break;
     case'filtrar':
          $controller = new AlbumController();
          $controller->showByNombre();  
-         break;    
+        break;    
     case 'login':
             $controller = new AuthController;
             $controller -> showLogin();
-            break;
+        break;
     case 'autenticar':
             $controller = new AuthController;
             $controller -> autenticarUsuario();
-            break;
+        break;
     case 'logout':
-                $controller = new AuthController;
-                $controller ->logout();
-                break;
+            $controller = new AuthController;
+            $controller ->logout();
+        break;
+
+    case 'lista':
+            $controller = new TasksController;
+            $controller ->showTasks();
+       
+        break;
+
+    case 'agregar':
+            $controller = new TasksController;
+            $controller ->addTasks();
+    
+        break;
+
+    case 'eliminar':
+            $controller = new TasksController;
+            $controller ->removeTasks($params[1]);
+    
+        break;
+
+    case 'guardar':
+            $controller = new TasksController;
+            $controller ->saveTasks($params[1]);
+    
+        break;
+
+    
         
     default:  
         echo'Eror 404';
