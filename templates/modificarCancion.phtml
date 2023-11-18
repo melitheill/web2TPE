@@ -1,0 +1,20 @@
+  
+      <div class = "mt-5 w-25 mx-auto">
+        <form method="POST" action="modificar">
+            <h2>Modificar Cancion </h2>
+        <select name ="idCancion">
+          <?php   foreach ($canciones as $cancion): ?>   
+          <option value="<?=$cancion->IdCancion?>"><?=$cancion->nombreCancion?></option>
+          <?php endforeach; ?>
+        </select>        
+         <label for="nombreCancion">Nombre de la Cancion</label>
+         <input type="text" class="form-control" id="nombreCancion"  name = "nombreCancion">
+         <label for="duracion">Duracion</label>
+         <input type="double" class="form-control" id="duracion"  name = "duracion">
+         <label for="genero">Genero</label>
+         <input type="text" class="form-control" id="genero"  name = "genero">
+         <label for="anio">Año</label>
+         <input type="date" class="form-control" id="anio"  name = "anio">
+         <button type="submit" class="btn btn-primary mt-3">Modificar</button>
+        </form>
+      </div>

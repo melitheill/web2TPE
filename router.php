@@ -5,7 +5,7 @@ require_once 'app/controllers/ArtistaController.php';
 require_once 'app/controllers/CancionesController.php';
 require_once 'app/controllers/AuthController.php';
 require_once 'app/controllers/AlbumController.php';
-require_once 'app/controllers/TasksController.php';
+require_once 'app/controllers/AbmController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -48,44 +48,35 @@ switch ($params[0]) {
          $controller->showByNombre();  
         break;    
     case 'login':
-            $controller = new AuthController;
+            $controller = new AuthController ();
             $controller -> showLogin();
         break;
     case 'autenticar':
-            $controller = new AuthController;
+            $controller = new AuthController();
             $controller -> autenticarUsuario();
         break;
     case 'logout':
-            $controller = new AuthController;
+            $controller = new AuthController ();
             $controller ->logout();
         break;
 
-    case 'lista':
-            $controller = new TasksController;
-            $controller ->showTasks();
-       
+    case 'abm':
+            $controller = new AbmController();
+            $controller ->showFormCanciones(); 
         break;
-
     case 'agregar':
-            $controller = new TasksController;
-            $controller ->addTasks();
-    
+           $controller = new AbmController();
+           $controller-> agregarCanciones();
         break;
-
-    case 'eliminar':
-            $controller = new TasksController;
-            $controller ->removeTasks($params[1]);
-    
+    case 'delete':
+            $controller = new AbmController();
+            $controller-> deleteCancion();
+         break;
+    case 'modificar':
+        $controller = new AbmController();
+        $controller->modificarCancion();
         break;
-
-    case 'guardar':
-            $controller = new TasksController;
-            $controller ->saveTasks($params[1]);
-    
-        break;
-
-    
-        
+         
     default:  
         echo'Eror 404';
         break;

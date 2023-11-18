@@ -30,7 +30,7 @@
             $_SESSION['USER_ID'] = $user->idUser;
             $_SESSION['USER_NAME'] = $user->user;
 
-           header("LOCATION: " . BASE_URL . 'lista');
+           header("LOCATION: " . BASE_URL . 'abm');
 
            
           } else { $this-> view-> showLogin('Usuario o Contraseña Incorrecta'); }
